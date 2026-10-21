@@ -12,3 +12,7 @@
 !/build-preview.mjs
 !/start-preview.mjs
 !/start-preview.cmd
+
+!/data/
+/data/*
+!/data/london-2026-top4.json

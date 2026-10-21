@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "races": [
+    {
+      "id": "london-2026-verified-top4",
+      "name": "2026 TCS London Marathon",
+      "date": "2026-04-26",
+      "demo": false,
+      "sourceNote": "男子、女子精英组各前四名的姓名、国籍、名次和完赛成绩，核对自 World Athletics 官方结果。仅导入终点累计时间；其他计时点与目标成绩未设置。",
+      "sources": [
+        {
+          "title": "World Athletics · 2026 TCS London Marathon 官方结果",
+          "url": "https://worldathletics.org/competition/calendar-results/results/7235562"
+        }
+      ],
+      "athletes": [
+        {
+          "id": "london-2026-men-1",
+          "name": "Sabastian Kimaru Sawe",
+          "group": "men",
+          "officialRank": 1,
+          "country": "KEN",
+          "bib": "",
+          "color": "#b5ed63",
+          "target": null,
+          "splits": [
+            {
+              "distance": 42.195,
+              "seconds": 7170
+            }
+          ],
+          "sourceUrl": "https://worldathletics.org/competition/calendar-results/results/7235562"
+        },
+        {
+          "id": "london-2026-men-2",
+          "name": "Yomif Kejelcha",
+          "group": "men",
+          "officialRank": 2,
+          "country": "ETH",
+          "bib": "",
+          "color": "#6fafff",
+          "target": null,
+          "splits": [
+            {
+              "distance": 42.195,
+              "seconds": 7181
+            }
+          ],
+          "sourceUrl": "https://worldathletics.org/competition/calendar-results/results/7235562"
+        },
+        {
+          "id": "london-2026-men-3",
+          "name": "Jacob Kiplimo",
+          "group": "men",
+          "officialRank": 3,
+          "country": "UGA",
+          "bib": "",
+          "color": "#b699ff",
+          "target": null,
+          "splits": [
+            {
+              "distance": 42.195,
+              "seconds": 7228
+            }
+          ],
+          "sourceUrl": "https://worldathletics.org/competition/calendar-results/results/7235562"
+        },
+        {
+          "id": "london-2026-men-4",
+          "name": "Amos Kipruto",
+          "group": "men",
+          "officialRank": 4,
+          "country": "KEN",
+          "bib": "",
+          "color": "#ffb46c",
+          "target": null,
+          "splits": [
+            {
+              "distance": 42.195,
+              "seconds": 7299
+            }
+          ],
+          "sourceUrl": "https://worldathletics.org/competition/calendar-results/results/7235562"
+        },
+        {
+          "id": "london-2026-women-1",
+          "name": "Tigst Assefa",
+          "group": "women",
+          "officialRank": 1,
+          "country": "ETH",
+          "bib": "",
+          "color": "#b5ed63",
+          "target": null,
+          "splits": [
+            {
+              "distance": 42.195,
+              "seconds": 8141
+            }
+          ],
+          "sourceUrl": "https://worldathletics.org/competition/calendar-results/results/7235562"
+        },
+        {
+          "id": "london-2026-women-2",
+          "name": "Hellen Obiri",
+          "group": "women",
+          "officialRank": 2,
+          "country": "KEN",
+          "bib": "",
+          "color": "#6fafff",
+          "target": null,
+          "splits": [
+            {
+              "distance": 42.195,
+              "seconds": 8153
+            }
+          ],
+          "sourceUrl": "https://worldathletics.org/competition/calendar-results/results/7235562"
+        },
+        {
+          "id": "london-2026-women-3",
+          "name": "Joyciline Jepkosgei",
+          "group": "women",
+          "officialRank": 3,
+          "country": "KEN",
+          "bib": "",
+          "color": "#b699ff",
+          "target": null,
+          "splits": [
+            {
+              "distance": 42.195,
+              "seconds": 8155
+            }
+          ],
+          "sourceUrl": "https://worldathletics.org/competition/calendar-results/results/7235562"
+        },
+        {
+          "id": "london-2026-women-4",
+          "name": "Degitu Azimeraw",
+          "group": "women",
+          "officialRank": 4,
+          "country": "ETH",
+          "bib": "",
+          "color": "#ffb46c",
+          "target": null,
+          "splits": [
+            {
+              "distance": 42.195,
+              "seconds": 8353
+            }
+          ],
+          "sourceUrl": "https://worldathletics.org/competition/calendar-results/results/7235562"
+        }
+      ]
+    }
+  ]
+}
