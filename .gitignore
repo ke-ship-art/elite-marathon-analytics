@@ -1,0 +1,14 @@
+*
+!/.gitignore
+!/.openai/
+!/.openai/hosting.json
+!/dist/
+!/dist/**
+!/tests/
+!/tests/**
+!/package.json
+!/README.md
+!/server.mjs
+!/build-preview.mjs
+!/start-preview.mjs
+!/start-preview.cmd
