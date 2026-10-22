@@ -9,6 +9,7 @@
 !/package.json
 !/package-lock.json
 !/README.md
+!/LICENSE
 !/server.mjs
 !/build-preview.mjs
 !/start-preview.mjs
