@@ -1,12 +1,12 @@
 # Elite Marathon Analytics
 
-精英马拉松赛事分析平台，纯前端、无依赖，支持本地运行与静态站点部署。
+精英马拉松赛事分析平台，浏览器端零运行时依赖，支持本地运行与静态站点部署。
 
 ## 运行
 
 双击 `start-preview.cmd`，自动在后台启动本地服务并用默认浏览器打开 http://127.0.0.1:4173/。已启动时直接复用，不会重复启动服务。需要已安装 Node.js 22+；关闭网页后服务仍在后台运行，重启电脑后需再次双击脚本。启动错误可查看 `preview-server.log`。
 
-先运行 `node build-preview.mjs`，再双击生成的 `preview.html` 可打开不依赖服务器的完整交互预览（推荐使用 Chrome / Edge）。这是由相同源代码打包的离线单文件版本。浏览器对 file:// 的存储支持可能不同，重要数据请导出备份。
+首次构建先运行 `npm install`，然后执行 `npm run build:preview`。双击生成的 `preview.html` 即可打开不依赖服务器或 `node_modules` 的完整交互预览（推荐使用 Chrome / Edge）。浏览器对 file:// 的存储支持可能不同，重要数据请导出备份。
 
 源代码开发预览需要 Node.js 22+：
 
@@ -20,13 +20,15 @@ npm start
 npm test
 ```
 
+运行 `npm run check` 会先重新生成离线预览，再执行全部自动化测试。
+
 ## 架构
 
 - `dist/index.html` / `style.css`：响应式深浅主题界面，无远程字体或资源。
 - `dist/app.mjs`：事件、表单、SVG 交互图表、localStorage 保存、JSON/CSV 文件操作。
 - `dist/core.mjs`：纯函数计算、统一数据校验、CSV 解析与生成、明确标注的虚构模拟数据。
 - `server.mjs`：仅用于本地预览的静态服务器。`dist/` 可按 Sites 静态站点流程发布；已部署至 ChatGPT Sites，当前站点访问权限为仅所有者。
-- `build-preview.mjs`：运行 `node build-preview.mjs` 将同一份代码打包为离线 `preview.html`，无第三方构建工具。
+- `build-preview.mjs`：由 `esbuild` 解析 ES Module 依赖图并生成离线单文件 `preview.html`，避免正则剥离模块语法造成的作用域冲突和依赖顺序风险。`esbuild` 仅用于开发构建，不进入浏览器运行环境。
 - `tests/core.test.mjs`：Node 原生自动化测试，无测试框架依赖。
 
 数据结构为 `{version:1,races:[{id,name,date,demo,athletes:[{id,name,bib,country,color,target,splits:[{distance,seconds}]}]}]}`。target 和 seconds 为秒，distance 为公里。空目标使用 null。所有计算保留浮点精度，仅格式化显示时取整。
@@ -41,7 +43,7 @@ JSON/CSV 导入全量校验后追加副本，保留模拟字段并生成新 ID�
 
 ## 当前验证结果
 
-35 项自动化测试通过。`qa-usability.mjs` 使用独立测试端口，覆盖首屏布局、SVG Enter/Space 操作、滚动位置、并列领先、标签碰撞、焦点、弹窗、损坏数据恢复和 200 人场景。结果保存在 `qa-output/usability/checks.json`，首屏测量见 `first-screen-metrics.json`。本轮未改变伦敦赛事的原始成绩。
+36 项自动化测试通过，其中离线构建测试会实际运行 `esbuild`，并检查生成页面不再引用外部脚本或样式。`qa-usability.mjs` 使用独立测试端口，覆盖首屏布局、SVG Enter/Space 操作、滚动位置、并列领先、标签碰撞、焦点、弹窗、损坏数据恢复和 200 人场景。结果保存在 `qa-output/usability/checks.json`，首屏测量见 `first-screen-metrics.json`。本轮未改变伦敦赛事的原始成绩。
 
 带有“模拟数据”标识的赛事和成绩为虚构；伦敦赛事的官方完赛成绩与第三方中途分段分别注明来源，不能把所有数据都视为模拟，也不能把所有分段都视为官方逐点核验。
 

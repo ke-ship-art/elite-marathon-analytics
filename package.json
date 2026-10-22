@@ -1,1 +1,14 @@
-{"name":"elite-marathon-analytics","private":true,"type":"module","scripts":{"start":"node server.mjs","test":"node --test tests/*.test.mjs"}}
+{
+  "name": "elite-marathon-analytics",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "build:preview": "node build-preview.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run build:preview && npm test"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
